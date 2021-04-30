@@ -42,7 +42,7 @@ router.get('/search', (req, res) => {
             results.push({"id": each.id, "title": (type == TV_TYPE ? each.name : each.title), 
                     "img": backdrop_path, "type": type, 
                     "rating": each.vote_average == null ? 
-                            "0" : `${each.vote_average/2}`, 
+                            "0" : `${(each.vote_average/2).toFixed(1)}`, 
                     "year": getYear(type, each)})
         }
         res.send(results.slice(0,20))
