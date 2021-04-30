@@ -237,7 +237,7 @@ function getDetail(json, type) {
         result.push({"id": each.id, "title": type === MV_TYPE ? each.title : each.name, 
                 "img": poster_path, "type": type})
     }
-    return result;
+    return result.slice(0,10);
 }
 
 router.get('/home' ,(req, res) => {
