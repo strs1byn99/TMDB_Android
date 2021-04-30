@@ -124,7 +124,7 @@ router.get('/movie/:id', (req, res) => {
             tmp = {"content": each.content,
                 "by": line,
                 "rating": each.author_details.rating == null ? 
-                        "0/5" : `${each.author_details.rating/2}/5`,
+                        "0/5" : `${Math.floor(each.author_details.rating/2)}/5`,
             }
             rev.push(tmp)
         })
